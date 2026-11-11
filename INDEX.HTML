@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Para Kayla ❤️</title>
+
+<style>
+
+/* =========================
+   COLORES DE LA PAGINA
+========================= */
+
+:root {
+    --rosa: #ff8fcb;
+    --morado: #bd8aff;
+    --rosa-claro: #ffe5f3;
+    --blanco: #ffffff;
+    --texto: #75416f;
+}
+
+/* ESTILO GENERAL */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: var(--texto);
+    background: linear-gradient(
+        135deg,
+        #ffe5f3,
+        #f0e1ff,
+        #ffd9ed
+    );
+    text-align: center;
+    overflow-x: hidden;
+}
+
+/* TITULO PRINCIPAL */
+
+header {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+}
+
+h1 {
+    font-family: Georgia, serif;
+    font-size: clamp(3rem, 10vw, 6rem);
+    color: #c05cba;
+    margin-bottom: 10px;
+}
+
+h1 span {
+    color: #f064b4;
+    font-style: italic;
+}
+
+header p {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    max-width: 550px;
+}
+
+/* BOTONES */
+
+button,
+.boton {
+    border: none;
+    padding: 14px 25px;
+    border-radius: 30px;
+    background: linear-gradient(
+        100deg,
+        var(--rosa),
+        var(--morado)
+    );
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+button:hover,
+.boton:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px #bd8aff66;
+}
+
+/* SECCIONES */
+
+section {
+    max-width: 900px;
+    margin: auto;
+    padding: 70px 20px;
+}
+
+h2 {
+    font-family: Georgia, serif;
+    font-size: clamp(2rem, 6vw, 3rem);
+    color: #bd65c9;
+}
+
+.descripcion {
+    line-height: 1.8;
+    max-width: 650px;
+    margin: 20px auto;
+}
+
+/* CONTADOR */
+
+.contador {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    max-width: 600px;
+    margin: 30px auto;
+}
+
+.tiempo {
+    background: #ffffffbb;
+    padding: 20px 5px;
+    border-radius: 20px;
+    border: 1px solid white;
+}
+
+.tiempo strong {
+    display: block;
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+    color: #ed65b2;
+}
+
+.tiempo span {
+    font-size: 0.8rem;
+}
+
+/* CARTA */
+
+.carta {
+    background: #ffffffc9;
+    padding: 35px;
+    border-radius: 25px;
+    line-height: 1.9;
+    text-align: left;
+    box-shadow: 0 10px 35px #bd8aff22;
+}
+
+.carta h3 {
+    font-family: Georgia, serif;
+    font-size: 1.6rem;
+    color: #d15ba7;
+}
+
+.firma {
+    text-align: right;
+    font-family: Georgia, serif;
+    font-size: 1.3rem;
+    color: #bd65c9;
+}
+
+/* GALERIA DE FOTOS */
+
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.galeria img {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    border-radius: 20px;
+    border: 4px solid white;
+    box-shadow: 0 8px 20px #bd8aff33;
+    transition: 0.3s;
+}
+
+.galeria img:hover {
+    transform: scale(1.03);
+}
+
+/* CANCION */
+
+.cancion {
+    max-width: 600px;
+    margin: 25px auto;
+    padding: 25px;
+    border-radius: 25px;
+    background: #ffffffbb;
+}
+
+iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: none;
+    border-radius: 15px;
+}
+
+/* MENSAJE SECRETO */
+
+#mensajeSecreto {
+    display: none;
+    background: #fff8fd;
+    padding: 25px;
+    border-radius: 20px;
+    margin: 25px auto;
+    max-width: 600px;
+    line-height: 1.8;
+    border: 2px dashed #e89bd0;
+}
+
+#mensajeSecreto.visible {
+    display: block;
+}
+
+/* CORAZONES ANIMADOS */
+
+.corazon {
+    position: fixed;
+    bottom: -40px;
+    pointer-events: none;
+    animation: flotar 8s linear forwards;
+    z-index: 10;
+}
+
+@keyframes flotar {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: translateY(-110vh) rotate(30deg);
+        opacity: 0;
+    }
+}
+
+/* PIE DE PAGINA */
+
+footer {
+    padding: 40px 20px;
+}
+
+/* ADAPTACION A CELULARES */
+
+@media (max-width: 600px) {
+
+    .galeria {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contador {
+        gap: 5px;
+    }
+
+    .carta {
+        padding: 23px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- =========================
+     PANTALLA PRINCIPAL
+========================= -->
+
+<header>
+
+    <p>✧ DE DAVID ✧</p>
+
+    <h1>Para <span>Kay</span> ♡</h1>
+
+    <p>
+       Eres la mejor niña de esta galaxia, gracias por estos 11 meses espectaculares. 💗
+    </p>
+
+    <a href="#carta" class="boton">
+        Picale al boton :) 💌
+    </a>
+
+</header>
+
+
+<!-- =========================
+     DÍAS JUNTOS
+========================= -->
+
+<section>
+
+    <h2>Solo para que sepas llevamos juntos.... ✨</h2>
+
+    <p class="descripcion">
+        Desde el 11 de diciembre de 2025 ❤️
+    </p>
+
+    <div class="contador">
+
+        <div class="tiempo">
+            <strong id="dias">0</strong>
+            <span>DÍAS</span>
+        </div>
+
+        <div class="tiempo">
+            <strong id="horas">0</strong>
+            <span>HORAS</span>
+        </div>
+
+        <div class="tiempo">
+            <strong id="minutos">0</strong>
+            <span>MINUTOS</span>
+        </div>
+
+        <div class="tiempo">
+            <strong id="segundos">0</strong>
+            <span>SEGUNDOS</span>
+        </div>
+
+    </div>
+
+    <p>Y todavía nos quedan muchísimos días juntos. ♡</p>
+
+</section>
+
+
+<!-- =========================
+     CARTA DE AMOR
+========================= -->
+
+<section id="carta">
+
+    <h2>UNA CARTA PARA TI 💌</h2>
+
+    <div class="carta">
+
+        <h3>Kay 💗: ♡</h3>
+
+        <p>
+            Quería hacerte algo ya que se que no te voy a ver 
+            y la verdad queria que fuera algo bonito y también 
+            fue muy divertido hacerlo y esto es algo para que
+            cada que quieras lo puedas abrir y recordar cuanto 
+            te amo y te adoro.
+        </p>
+
+        <p>
+            Gracias por estos 11 meses juntos, muchas gracias
+            por las risas, por las pláticas y por todas esas
+            pequeñas cosas que hacen que estar contigo
+            sea sienta tan especial y que horas, se sientan
+            como si únicamente hubieramos pasado 5 min juntos.
+        </p>
+
+        <p>
+            Realmente no sé qué pasara en un futuro, pero sí sé
+            que quiero seguir contigo, acompañarte y hacerte sentir
+            la niña más amada de este universo.
+        </p>
+
+        <p>
+            Me haces demasiado feliz y me encanta la forma como 
+            eres conmigo y que me haces sentir super único.
+
+        </p>
+
+        <p>
+            Y tu sabes que si algún día no te sientes bien, 
+            me lo puedes decir, pero también quiero que esto 
+            sirva para que puedas volver a ver esta carta y 
+            recordar que siempre hay alguien que siempre piensa 
+            en ti y que te ama muchisimo.
+        </p>
+
+        <p class="firma">
+            Te amo demasiado mi niña hermosa. ♡<br>
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     GALERIA DE FOTOS
+========================= -->
+
+<section>
+
+    <h2>GALERIA DE NUESTRAS FOTOS 📸</h2>
+
+    <p class="descripcion">
+        Yo creo que estos han sido días super padres. ❤️
+    </p>
+
+    <div class="galeria">
+
+        <img src="fotos/foto1.jpg" alt="Nuestro recuerdo 1">
+
+        <img src="fotos/foto2.jpg" alt="Nuestro recuerdo 2">
+
+        <img src="fotos/foto3.jpg" alt="Nuestro recuerdo 3">
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CANCION DE MORAT
+========================= -->
+
+<section>
+
+    <h2>Una canción para ti 🎶</h2>
+
+    <div class="cancion">
+
+        <h3>MI SUERTE</h3>
+
+        <p>Morat</p>
+
+        <iframe
+
+            src="https://www.youtube.com/embed/sfv0xWONROg?si=ybCbPi8ge5Yg-c64"
+
+            title="Mi Suerte - Morat"
+
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+
+            referrerpolicy="strict-origin-when-cross-origin"
+
+            allowfullscreen>
+
+        </iframe>
+
+        <p>
+
+            YO YA GASTE TODA MI SUERTE, MI SUERTE LA USE
+            EN ENCONTRARTE A TI 💗
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     MENSAJE SECRETO
+========================= -->
+
+<section>
+
+    <h2>Un último detallito... 💝</h2>
+
+    <p class="descripcion">
+        Kay, hay algo que quiero que recuerdes siempre.
+    </p>
+
+    <button onclick="mostrarMensaje()">
+        Abrir mi mensaje secreto ✨
+    </button>
+
+    <div id="mensajeSecreto">
+
+        <h3>NOOB, TE AMOOOOOOOOOO 
+            MUCHISIMOOOOOOOOO 💗</h3>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+
+/* FECHA DE INICIO DE LA RELACION
+*/
+
+const inicioRelacion = new Date(2025, 11, 11, 19, 30, 0);
+
+
+function actualizarContador() {
+
+    const ahora = new Date();
+
+    let diferencia = Math.max(
+        0,
+        ahora.getTime() - inicioRelacion.getTime()
+    );
+
+    const segundo = 1000;
+    const minuto = segundo * 60;
+    const hora = minuto * 60;
+    const dia = hora * 24;
+
+    const dias = Math.floor(diferencia / dia);
+
+    diferencia %= dia;
+
+    const horas = Math.floor(diferencia / hora);
+
+    diferencia %= hora;
+
+    const minutos = Math.floor(diferencia / minuto);
+
+    const segundos = Math.floor(
+        (ahora.getTime() - inicioRelacion.getTime()) / segundo
+    ) % 60;
+
+    document.getElementById("dias").textContent =
+        Math.floor(
+            Math.max(0, ahora.getTime() - inicioRelacion.getTime()) / dia
+        );
+
+    document.getElementById("horas").textContent = horas;
+
+    document.getElementById("minutos").textContent = minutos;
+
+    document.getElementById("segundos").textContent = segundos;
+
+}
+
+actualizarContador();
+
+setInterval(actualizarContador, 1000);
+
+
+/* MENSAJE SECRETO */
+
+function mostrarMensaje() {
+
+    const mensaje = document.getElementById("mensajeSecreto");
+
+    if (mensaje.classList.contains("visible")) {
+
+        mensaje.classList.remove("visible");
+
+    } else {
+
+        mensaje.classList.add("visible");
+
+    }
+
+}
+
+
+/* CORAZONES FLOTANTES */
+
+const simbolos = ["♡", "♥", "💗", "💕", "✧"];
+
+function crearCorazon() {
+
+    const corazon = document.createElement("span");
+
+    corazon.className = "corazon";
+
+    corazon.textContent =
+        simbolos[Math.floor(Math.random() * simbolos.length)];
+
+    corazon.style.left = Math.random() * 100 + "vw";
+
+    corazon.style.fontSize =
+        (14 + Math.random() * 20) + "px";
+
+    corazon.style.animationDuration =
+        (6 + Math.random() * 5) + "s";
+
+    document.body.appendChild(corazon);
+
+    setTimeout(() => {
+
+        corazon.remove();
+
+    }, 12000);
+
+}
+
+setInterval(crearCorazon, 800);
+
+</script>
+
+</body>
+</html>
